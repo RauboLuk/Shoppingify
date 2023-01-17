@@ -1,6 +1,6 @@
 import { Flex, GridItem } from '@chakra-ui/react'
-import Image from 'next/image'
 import { Icon } from './Icon'
+import { NavbarLink } from './NavbarLink'
 import { NavbarList } from './NavbarList'
 
 function Sidebar() {
@@ -23,12 +23,9 @@ function Sidebar() {
                 >
                     <NavbarList />
                 </Flex>
-                <Image
-                    src="/shopping_cart_icon.svg"
-                    width={36}
-                    height={36}
-                    alt="statistics"
-                />
+                <NavbarLink href="/" >
+                    <Icon src="/shopping_cart_icon.svg" alt="statistics" />
+                </NavbarLink>
             </Flex>
         </GridItem>
     )
