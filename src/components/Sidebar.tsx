@@ -38,7 +38,12 @@ function Sidebar() {
                         alt="statistics"
                     />
                 </Flex>
-                <div>i3</div>
+                <Image
+                        src="/shopping_cart_icon.svg"
+                        width={36}
+                        height={36}
+                        alt="statistics"
+                    />
             </Flex>
         </GridItem>
     )
