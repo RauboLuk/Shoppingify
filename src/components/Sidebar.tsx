@@ -1,5 +1,7 @@
 import { Flex, GridItem } from '@chakra-ui/react'
 import Image from 'next/image'
+import { Icon } from './Icon'
+import { NavbarList } from './NavbarList'
 
 function Sidebar() {
     return (
@@ -19,31 +21,14 @@ function Sidebar() {
                     h={'235px'}
                     w={'100%'}
                 >
-                    <Image
-                        src="/menu_icon.svg"
-                        width={36}
-                        height={36}
-                        alt="items"
-                    />
-                    <Image
-                        src="/refresh_icon.svg"
-                        width={36}
-                        height={36}
-                        alt="history"
-                    />
-                    <Image
-                        src="/analytics_icon.svg"
-                        width={36}
-                        height={36}
-                        alt="statistics"
-                    />
+                    <NavbarList />
                 </Flex>
                 <Image
-                        src="/shopping_cart_icon.svg"
-                        width={36}
-                        height={36}
-                        alt="statistics"
-                    />
+                    src="/shopping_cart_icon.svg"
+                    width={36}
+                    height={36}
+                    alt="statistics"
+                />
             </Flex>
         </GridItem>
     )
