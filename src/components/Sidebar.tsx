@@ -5,7 +5,7 @@ import { NavbarList } from './NavbarList'
 
 function Sidebar() {
     return (
-        <GridItem>
+        <GridItem pt={'10px'} pb={'10px'}>
             <Flex
                 as={'nav'}
                 justifyContent={'space-between'}
@@ -23,8 +23,8 @@ function Sidebar() {
                 >
                     <NavbarList />
                 </Flex>
-                <NavbarLink href="/" >
-                    <Icon src="/shopping_cart_icon.svg" alt="statistics" />
+                <NavbarLink href="/">
+                    <Icon src="/shopping_cart_icon.svg" alt="statistics"  />
                 </NavbarLink>
             </Flex>
         </GridItem>

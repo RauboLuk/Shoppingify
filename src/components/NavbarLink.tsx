@@ -1,7 +1,7 @@
-import { Box } from '@chakra-ui/layout'
 import type { LinkProps } from 'next/link'
-import Link from 'next/link'
 import type { ReactElement } from 'react'
+import NextLink from 'next/link'
+import { Box, Link } from '@chakra-ui/react'
 
 interface Props extends LinkProps {
     active?: boolean
@@ -9,14 +9,22 @@ interface Props extends LinkProps {
 }
 
 export const NavbarLink = ({ children, ...props }: Props) => {
+
+    const background = props.active ? 'orange.400' : 'transparent'
+
     return (
-        <Box
-            w="100%"
-            borderLeft="1px solid orange"
+        <Link
+            as={NextLink}
+            href='/'
+            w={'100%'}
+            h={'60px'}
             display={'flex'}
-            justifyContent={'center'}
+            justifyContent={'space-between'}
+            alignItems={'center'}
         >
-            <Link {...props}>{children}</Link>
-        </Box>
+            <Box w="6px" h={'100%'} background={background} borderRadius={'0 7px 7px 0'}></Box>
+            {children}
+            <Box w="6px"></Box>
+        </Link>
     )
 }
