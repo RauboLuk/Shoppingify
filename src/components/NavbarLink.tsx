@@ -28,7 +28,7 @@ export const NavbarLink = ({ children, active, ...props }: Props) => {
                 borderRadius={'0 7px 7px 0'}
             ></Box>
             {children}
-            <Box w="6px"></Box>
+            <Box w="6px" aria-hidden="true"></Box>
         </Link>
     )
 }

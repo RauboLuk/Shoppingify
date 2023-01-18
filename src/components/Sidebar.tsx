@@ -1,11 +1,11 @@
 import { Flex, GridItem } from '@chakra-ui/react'
-import { Icon } from './Icon'
+import { Cart } from './Cart'
 import { NavbarLink } from './NavbarLink'
 import { NavbarList } from './NavbarList'
 
 function Sidebar() {
     return (
-        <GridItem pt={'10px'} pb={'10px'}>
+        <GridItem pt={'10px'} pb={'10px'} bg={'orange.100'}>
             <Flex
                 as={'nav'}
                 justifyContent={'space-between'}
@@ -23,9 +23,7 @@ function Sidebar() {
                 >
                     <NavbarList />
                 </Flex>
-                <NavbarLink href="/">
-                    <Icon src="/shopping_cart_icon.svg" alt="statistics"  />
-                </NavbarLink>
+                <Cart />
             </Flex>
         </GridItem>
     )
