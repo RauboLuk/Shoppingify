@@ -1,15 +1,12 @@
-import { Circle, Icon, IconButton } from '@chakra-ui/react'
-import IconShoppingCart from './icons/IconShoppingCart'
-
-
+import { Box, Circle } from '@chakra-ui/react'
+import { Icon } from './Icon'
 
 export function Cart() {
     return (
-        <Circle size={'52px'} bg={'orange.400'}>
-            <Icon as={IconShoppingCart} h="4" w={4}/>
-            
+        <Circle size={'52px'} bg={'orange.400'} p={'10px'}>
+            <Box filter={'auto'} invert={'100%'}>
+                <Icon src={'/shopping_cart_icon.svg'} alt="cart" />
+            </Box>
         </Circle>
-
-        // <IconButton aria-label="Open cart" icon={<IconShoppingCart />} />
     )
 }
