@@ -1,9 +1,10 @@
-import { Flex, GridItem } from '@chakra-ui/react'
-import Image from 'next/image'
+import { Avatar, Flex, GridItem } from '@chakra-ui/react'
+import { Cart } from './Cart'
+import { NavbarList } from './NavbarList'
 
 function Sidebar() {
     return (
-        <GridItem>
+        <GridItem pt={'10px'} pb={'10px'} bg={'orange.100'}>
             <Flex
                 as={'nav'}
                 justifyContent={'space-between'}
@@ -11,7 +12,7 @@ function Sidebar() {
                 direction={'column'}
                 height={'100%'}
             >
-                <div>i1</div>
+                <Avatar size="md" name="User Avatar" bg={'gray.700'} />
                 <Flex
                     justifyContent={'space-between'}
                     alignItems={'center'}
@@ -19,26 +20,9 @@ function Sidebar() {
                     h={'235px'}
                     w={'100%'}
                 >
-                    <Image
-                        src="/menu_icon.svg"
-                        width={36}
-                        height={36}
-                        alt="items"
-                    />
-                    <Image
-                        src="/refresh_icon.svg"
-                        width={36}
-                        height={36}
-                        alt="history"
-                    />
-                    <Image
-                        src="/analytics_icon.svg"
-                        width={36}
-                        height={36}
-                        alt="statistics"
-                    />
+                    <NavbarList />
                 </Flex>
-                <div>i3</div>
+                <Cart />
             </Flex>
         </GridItem>
     )
