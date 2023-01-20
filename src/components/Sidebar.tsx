@@ -1,6 +1,5 @@
-import { Flex, GridItem } from '@chakra-ui/react'
+import { Avatar, Flex, GridItem } from '@chakra-ui/react'
 import { Cart } from './Cart'
-import { NavbarLink } from './NavbarLink'
 import { NavbarList } from './NavbarList'
 
 function Sidebar() {
@@ -13,7 +12,7 @@ function Sidebar() {
                 direction={'column'}
                 height={'100%'}
             >
-                <div>i1</div>
+                <Avatar size="md" name="User Avatar" bg={'gray.700'} />
                 <Flex
                     justifyContent={'space-between'}
                     alignItems={'center'}
