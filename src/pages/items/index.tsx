@@ -1,3 +1,4 @@
+import ShoppingList from "@/components/ShoppingList"
 import { Box, GridItem } from "@chakra-ui/react"
 
 const index = () => {
@@ -6,9 +7,7 @@ const index = () => {
             <GridItem as={'section'} >
                 qeqwe
             </GridItem>
-            <GridItem as={'aside'} background={'#FFF0DE'} height={'100vh'}>
-                qwe
-            </GridItem>
+            <ShoppingList />
         </>
     )
 }
