@@ -15,7 +15,7 @@ export const ProductCard = ({ name }: Props) => {
                     gap={2}
                 >
                     <Text>{name}</Text>
-                    <Icon src={'/menu_icon.svg'} alt={'items'} />
+                    <Icon src={'/add_icon.svg'} alt={'items'} />
                 </Grid>
             </CardBody>
         </Card>
