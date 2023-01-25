@@ -1,16 +1,12 @@
-import { ProductCard } from '@/components/ProductCard'
+import ProductsList from '@/components/ProductsList'
 import ShoppingList from '@/components/ShoppingList'
-import { Flex, GridItem } from '@chakra-ui/react'
+import { GridItem } from '@chakra-ui/react'
 
 const index = () => {
     return (
         <>
             <GridItem as={'section'} p={'2'}>
-                qeqwe
-                <Flex>
-                    <ProductCard name="Test" />
-                    <ProductCard name="Test" />
-                </Flex>
+                <ProductsList />
             </GridItem>
             <ShoppingList />
         </>
