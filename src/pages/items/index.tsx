@@ -1,5 +1,5 @@
 import Header from '@/components/Header'
-import ProductsList from '@/components/ProductsList'
+import ProductCategory from '@/components/ProductCategory'
 import ShoppingList from '@/components/ShoppingList'
 import { GridItem } from '@chakra-ui/react'
 
@@ -8,7 +8,7 @@ const index = () => {
         <>
             <GridItem as="section" p="2">
                 <Header />
-                <ProductsList />
+                <ProductCategory />
             </GridItem>
             <ShoppingList />
         </>
