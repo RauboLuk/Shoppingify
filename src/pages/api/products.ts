@@ -23,7 +23,14 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<Category[]>
 ) {
+    await delayResponse()
     res.status(200).json(categories)
+}
+
+function delayResponse(ms = 1_000) {
+    return new Promise<void>((resolve, reject) => {
+        setTimeout(() => resolve(), ms)
+    })
 }
 
 export type { Category, Product }
