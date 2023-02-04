@@ -13,7 +13,7 @@ import ProductsList from './ProductsList'
 
 const ProductCategory = () => {
     const { isLoading, error, data } = useQuery<Category[], Error>(
-        'repoData',
+        'categories',
         () => fetch('./api/products').then((res) => res.json())
     )
 
