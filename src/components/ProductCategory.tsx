@@ -8,10 +8,15 @@ import {
     Heading,
     Skeleton,
 } from '@chakra-ui/react'
+import { escapeRegExp } from 'lodash'
 import { useQuery } from 'react-query'
 import ProductsList from './ProductsList'
 
-const ProductCategory = () => {
+interface Props {
+    search: string
+}
+
+const ProductCategory = ({ search }: Props) => {
     const { isLoading, error, data } = useQuery<Category[], Error>(
         'categories',
         () => fetch('./api/products').then((res) => res.json())
@@ -39,9 +44,11 @@ const ProductCategory = () => {
             </Alert>
         )
 
-    return data ? (
+    const filteredData = data ? searchItem(data, search) : undefined
+
+    return filteredData ? (
         <Flex gap={{ base: 5, md: 10 }} direction={'column'}>
-            {data.map((category) => (
+            {filteredData.map((category) => (
                 <Box key={category.name}>
                     <Heading size={'md'} pb={4}>
                         {category.name}
@@ -51,6 +58,18 @@ const ProductCategory = () => {
             ))}
         </Flex>
     ) : null
+}
+
+function searchItem(categories: Category[], name: string) {
+    if (name === '') return categories
+    const escapedRegExp = new RegExp(escapeRegExp(name), 'i')
+    const filteredProducts = categories.map((category) => ({
+        ...category,
+        products: category.products.filter((product) =>
+            escapedRegExp.test(product.name)
+        ),
+    }))
+    return filteredProducts.filter((category) => category.products.length > 0)
 }
 
 export default ProductCategory
