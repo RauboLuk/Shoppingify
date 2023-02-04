@@ -6,9 +6,15 @@ import {
     InputGroup,
     InputLeftElement,
 } from '@chakra-ui/react'
+import { ChangeEvent } from 'react'
 import { Icon } from './Icon'
 
-export const Header = () => {
+interface Props {
+    search: string
+    handleSearchUpdate: (e: ChangeEvent<HTMLInputElement>) => void
+}
+
+export const Header = ({ search, handleSearchUpdate }: Props) => {
     return (
         <Flex
             wrap="wrap"
@@ -36,7 +42,12 @@ export const Header = () => {
                         width={20}
                     />
                 </InputLeftElement>
-                <Input type="tel" placeholder="search item" />
+                <Input
+                    type="tel"
+                    placeholder="search item"
+                    value={search}
+                    onChange={handleSearchUpdate}
+                />
             </InputGroup>
         </Flex>
     )
