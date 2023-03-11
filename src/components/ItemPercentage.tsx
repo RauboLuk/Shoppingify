@@ -1,13 +1,14 @@
-import { Grid, GridItem, Text } from '@chakra-ui/react'
+import { BackgroundProps, Grid, GridItem, Text } from '@chakra-ui/react'
 import React from 'react'
 import ProgressBar from './ProgressBar'
 
 interface Props {
     title: string
     value: number
+    barColor?: BackgroundProps["bg"]
 }
 
-const ItemPercentage = ({ title, value }: Props) => {
+const ItemPercentage = ({ title, value, barColor }: Props) => {
     return (
         <Grid
             gridTemplateColumns={'1fr full'}
@@ -22,7 +23,7 @@ const ItemPercentage = ({ title, value }: Props) => {
                 <Text fontSize="md" fontWeight="700">{value}%</Text>
             </GridItem>
             <GridItem gridColumn={'span 2'}>
-                <ProgressBar progress={value} />
+                <ProgressBar progress={value} barColor={barColor}/>
             </GridItem>
         </Grid>
     )
